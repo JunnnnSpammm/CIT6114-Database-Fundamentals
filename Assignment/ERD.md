@@ -15,10 +15,12 @@ erDiagram
     CUSTOMER {
         int Customer_ID PK
         string Customer_Name
+        string Address
     }
     RESTAURANT {
         int Restaurant_ID PK
         string Restaurant_Name
+        string Address
     }
     RIDER {
         int Rider_ID PK
@@ -48,10 +50,10 @@ erDiagram
     PAYMENT_METHOD{
         int Payment_Method_ID PK
         int Customer_ID FK
+        string PaymentMethod
     }
-    %% Weak Entity
     ORDER_ITEM {
         int Order_ID FK, PK
         int Menu_ID FK, PK
+        int Quantity
     }
-```
