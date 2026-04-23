@@ -15,20 +15,31 @@ erDiagram
     CUSTOMER {
         int Customer_ID PK
         string Customer_Name
+        string Email
+        string Phone_Num
+        string Hashed_Password
         string Address
     }
     RESTAURANT {
         int Restaurant_ID PK
         string Restaurant_Name
         string Address
+        string Description
+        int Avg_Rating
     }
     RIDER {
         int Rider_ID PK
         string Rider_Name
+        string Email
+        string Hashed_Password
+        string Phone_Num
+        string Vehicle_Plate
+        string Vehicle_Type
     }
     FOOD {
         int Food_ID PK
         string Food_Name
+        float Price
     }
     MENU {
         int Menu_ID PK
@@ -41,11 +52,14 @@ erDiagram
         int Restaurant_ID FK
         int Rider_ID FK
         int Payment_Method_ID FK
+        datetime Timestamp
     }
     REVIEW {
         int Review_ID PK
         int Customer_ID FK
         int Order_ID FK
+        string Comments
+        int User_Rating
     }
     PAYMENT_METHOD{
         int Payment_Method_ID PK
