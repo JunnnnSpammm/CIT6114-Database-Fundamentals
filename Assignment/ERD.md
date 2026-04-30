@@ -1,15 +1,15 @@
 ```mermaid
 erDiagram
     CUSTOMER ||..o{ ORDER : places
-    CUSTOMER ||--|{ PAYMENT_METHOD : owns
-    RESTAURANT ||--|{ MENU : makes
-    FOOD ||--o{ MENU : contains
+    CUSTOMER ||..|{ PAYMENT_METHOD : owns
+    RESTAURANT ||..|{ MENU : makes
+    FOOD ||..o{ MENU : contains
     RESTAURANT ||..o{ ORDER : prepares
     RIDER ||..o{ ORDER : delivers
     ORDER ||--o| REVIEW : generates
     PAYMENT_METHOD ||..o{ ORDER : "pay using"
     ORDER ||--|{ ORDER_ITEM : contains
-    MENU ||--o{ ORDER_ITEM : "ordered in"
+    MENU ||..o{ ORDER_ITEM : "ordered in"
 
     CUSTOMER {
         int Customer_ID PK
@@ -41,8 +41,9 @@ erDiagram
         string Food_Name
     }
     MENU {
-        int Restaurant_ID PK, FK
-        int Food_ID PK, FK
+        int Menu_ID PK
+        int Restaurant_ID FK
+        int Food_ID FK
         float Price
     }
     ORDER {
@@ -57,6 +58,7 @@ erDiagram
         float Delivery_Fee
     }
     REVIEW {
+        int Review_ID PK
         int Order_ID PK, FK
         string Comments
         int Restaurant_Rating
@@ -65,13 +67,13 @@ erDiagram
     }
     PAYMENT_METHOD{
         int Payment_Method_ID PK
-        int Customer_ID PK, FK
+        int Customer_ID FK
         string PaymentMethod
     }
     ORDER_ITEM {
+        int Order_Item_ID PK
         int Order_ID PK, FK
-        int Restaurant_ID PK, FK
-        int Food_ID PK, FK
+        int Menu_ID FK
         int Quantity
     }
 ```
