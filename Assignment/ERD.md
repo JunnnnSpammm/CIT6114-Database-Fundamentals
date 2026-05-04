@@ -82,11 +82,11 @@ erDiagram
 - Each `Customer` must have at least one `Payment Method` or more; each `Payment Method` must come from a `Customer`
 - Each `Customer` may place many `Orders`; each `Order` must come from a `Customer`
 - Each `Payment Method` may pay for many `Orders`; each `Order` must come with a `Payment Method`
-- Each `Restraunt` may prepare many `Orders`; each `Order` must be sent to a `Restraunt`
+- Each `Restaurant` may prepare many `Orders`; each `Order` must be sent to a `Restaurant`
 - Each `Order` must have at least one `Order Item` or more; each `Order Item` must come from an `Order`
-- Each `Order` may generates one `Review`; each `Review` must come from an `Order`
+- Each `Order` may generate one `Review`; each `Review` must come from an `Order`
 - Each `Rider` may deliver many `Orders`; each `Order` must be assign to a `Rider`
-- Each `Restraunt` must have at least one `Menu` or more; each `Menu` must come from a `Restraunt`
+- Each `Restaurant` must have at least one `Menu` or more; each `Menu` must come from a `Restaurant`
 - Many `Order Item` can be ordered from a `Menu`; each `Menu` may have many `Order Item`
 - Each `Food` may be used in many `Menu`; each `Menu` must contains a `Food`
 
