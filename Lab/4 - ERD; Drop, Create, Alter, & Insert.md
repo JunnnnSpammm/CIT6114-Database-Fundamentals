@@ -90,3 +90,6 @@ erDiagram
 
 **Internal Database:**
 <img width="1001" height="561" alt="Internal" src="https://github.com/user-attachments/assets/a0a888d1-bac1-446b-a0e4-26ab77f5b113" />
+
+**Conceptual Database:**
+<img width="621" height="111" alt="newLab4ERD drawio" src="https://github.com/user-attachments/assets/0f60fff1-5266-4582-91f9-def925a6ee74" />
