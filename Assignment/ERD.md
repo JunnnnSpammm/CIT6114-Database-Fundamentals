@@ -35,6 +35,7 @@ erDiagram
         string Phone_Num
         string Vehicle_Plate
         string Vehicle_Type
+        int Avg_Rating
     }
     FOOD {
         int Food_ID PK
