@@ -358,22 +358,6 @@
             </g>
           </g>
           <g data-cell-id="CwTcqYElj8hhbOopnB4v-1">
-            <g transform="translate(.5 .5)"/>
-            <g data-cell-id="CwTcqYElj8hhbOopnB4v-2">
-              <path d="M358.5 568.5h30v30h-30z" fill="none" pointer-events="all"/>
-              <switch>
-                <foreignObject style="overflow:visible;text-align:left" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                  <div xmlns="http://www.w3.org/1999/xhtml" style="display:flex;align-items:unsafe center;justify-content:unsafe center;width:28px;height:1px;padding-top:583px;margin-left:359px">
-                    <div style="box-sizing:border-box;font-size:0;text-align:center;max-height:26px;overflow:hidden;color:#000">
-                      <div style="display:inline-block;font-size:12px;font-family:Helvetica;color:#000;line-height:1.2;pointer-events:all;white-space:normal;word-wrap:normal">
-                        FK
-                      </div>
-                    </div>
-                  </div>
-                </foreignObject>
-                <image x="359" y="576.5" width="28" height="17" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHAAAABECAYAAABZC7HwAAAD4klEQVR4AeybTahNURTHL6VQygAZUDJRiJkBCiUfRcSIUkwIkaSIkgkDJiIlSQohpSSEiRIpSUkGPgbKSEk+QiJ+K268d/a+59579tlr73fX6/+/5721z97r7PXrnHe+7uCG/WRdAQOYNb5GwwAawMwrkPnm2x5oADOvQOabb3ugAcy8Aplvvu2BvQmw8qxfMcKvGr2FsfvrEYH+OacQ61YT6NhqHnNpr11ae+Dommc2wjH+SEdsuCPWTkjg3WXFidilnQTv4NqlBbD2idWYoAlvnCfHVuIHcRQZwM7KXAZvA8MdxdGUEsA3zPpeIL9gnNAqg7eOhCdwVKUEUAowm9mH8CXGCakyeKtIdhpHV0oAo0++zYRl8FYyzgWsIgPYuuxl8JbQ/TJWkwH0l74M3kK6XsOqigtQdaodJS+DN4/RbmF1GcAigjJ4s+gS5SKdPKUygH1L1AreJ1adge/jZGQA/6EogzeHVR/ipGQA/+AogzeT1R7j5JQSQDkxWEyFuvUi+g7BnaoVPBnrKh9PcZJKCeBuKnS9gm/QdxLuRPI0QZ4q+G5My1ir+ZiPk1RKADUKJHdQWsFrbtM5fhmFk1OvA2wXyBhWPIkH4aSUBcCIFXtCLrkxzaKgZUTW46SUEkB5CLqc6lTxc/p3K7lEkNcg5LB6yDPIceKTcTJKCeBtqnKlor/TvxvJiYycqLz/23kvy2fYpfMEh+IklBJArYLcJLFcgnxk2dQ3fvEdSqfRth8noV4HKHu8HLK/OGjI/8MdjriEtvOxAKur1wHKniR7mw/EYRp8N67P0CZnpyz01OsAyyr/kxXWYrmRzaKPBJ76pYUB7MPE+cdropuwS0sJbsRqMoDtlf4sq/lelDpG21SsooEMMHRBZU976xn0IvFhOLoMYPslf8eqa7BLcnF/wNVQd8wAdlZheQ/G9+b1NoaSR2Es4skAdl7rXXTx3bKTQ+lY2qPJAHZearnol2eErp7yrahTNESra7RETGogSb5ruMczITmMbva0BQ8bwO5LKk9PHni6HyEu90xZ1CstgB8c05JDkyMcLPTZMdJXR6zd0A9W9J2V0tTY14jwowVwPHOTp9v/u+73Lac7clZ9WemlY8zmnFbQVru0ANY+se4T5NXTAObFq7C1BrBQkrwCBjAvXoWtNYCFkuQVMIB58SpsrQEslCSvgAHMi1dhaw1goSR5BQxgKF5K4xhApcKHSmsAQ1VSaRwDqFT4UGkNYKhKKo1jAJUKHyqtAQxVSaVxDKBS4UOlNYChKqk0jgFUKnwzbdWlAaxaQeX+BlAZQNX0BrBqBZX7G0BlAFXT/wYAAP//LehTdQAAAAZJREFUAwB44bOJ60WfdQAAAABJRU5ErkJggg=="/>
-              </switch>
-            </g>
             <g data-cell-id="CwTcqYElj8hhbOopnB4v-3">
               <path d="M388.5 568.5h130v30h-130z" fill="none" pointer-events="all"/>
               <switch>
