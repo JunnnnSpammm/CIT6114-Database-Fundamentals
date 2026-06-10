@@ -4,7 +4,7 @@
 
 | ATTRIBUTE NAME | CONTENTS | TYPE | FORMAT | RANGE | REQUIRED | PK OR FK | FK REFERENCED TABLE |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Customer_ID | Customer's ID | INT UNSIGNED | 9999 | 14,294,967,295 | Y | PK | |
+| Customer_ID | Customer's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK | |
 | Customer_Name | Customer's name | VARCHAR(255) | Xxxxxxxxx | | Y | | |
 | Email | Customer's email | VARCHAR(255) | xxxxxx@xxxxx.xxx | | Y | | |
 | Phone Num | Customer's phone number | VARCHAR(50) | 012-34567890 | | | | |
@@ -56,22 +56,22 @@
 | ATTRIBUTE NAME | CONTENTS | TYPE | FORMAT | RANGE | REQUIRED | PK OR FK | FK REFERENCED TABLE |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Payment_Method_ID | Payment method's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK | |
-| Customer_ID | Customer's ID | INT UNSIGNED | 9999 | 14,294,967,295 | Y | FK | Customer_ID |
+| Customer_ID | Customer's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Customer_ID |
 | PaymentMethod | Payment method's name | VARCHAR(100) | Xxxxxxxxxx | | Y | | |
 
 ## ORDER
 
-| ATTRIBUTE NAME | CONTENTS | TYPE FORMAT | RANGE | REQUIRED | PK OR FK | FK REFERENCED TABLE |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Order_ID | Order's ID | INT UNSIGNED 9999 | 1-4,294,967,295 | Y | PK | |
-| Customer ID | Customer's ID | 9999 INT UNSIGNED | 1-4,294,967,295 | Y | FK | Customer ID |
-| Restaurant_ID | Restaurant's ID | INT UNSIGNED 9999 | 1-4,294,967,295 | Y | FK | Restaurant ID |
-| Rider_ID | Restaurant's ID | 9999 INT UNSIGNED | 1-4,294,967,295 | Y | FK | Rider_ID |
-| Payment_Method_ID | Payment method's ID | 9999 INT UNSIGNED | 14,294,967,295 | Y | FK | Payment_Method_ID |
-| Timestamp | Date and time when the order was made | YYYY-MM-DD HH:MM:SS DATETIME | | Y | | |
+| ATTRIBUTE NAME | CONTENTS | TYPE | FORMAT | RANGE | REQUIRED | PK OR FK | FK REFERENCED TABLE |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Order_ID | Order's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK | |
+| Customer ID | Customer's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Customer ID |
+| Restaurant_ID | Restaurant's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Restaurant ID |
+| Rider_ID | Restaurant's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Rider_ID |
+| Payment_Method_ID | Payment method's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Payment_Method_ID |
+| Timestamp | Date and time when the order was made | DATETIME | YYYY-MM-DD HH:MM:SS | | Y | | |
 | Order Status | Current order status | VARCHAR(15) | Xxxxxxxxxx | Preparing, in delivery, completed | Y | | |
-| Total Food Price | Total price of this order | DECIMAL(10, 2) 9999.99 | 0.01-99999999.99 | Y | | |
-| Delivery_Fee | Delivery fee paid to rider | 9999.99 DECIMAL(10, 2) | 0.01-99999999.99 | Y | | |
+| Total Food Price | Total price of this order | DECIMAL(10, 2) | 9999.99 | 0.01-99999999.99 | Y | | |
+| Delivery_Fee | Delivery fee paid to rider | DECIMAL(10, 2) | 9999.99 | 0.01-99999999.99 | Y | | |
 
 ## ORDER_ITEM
 
@@ -79,13 +79,14 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | Order_Item_ID | Order item's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK | |
 | Order_ID | Order's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK, FK | Order_ID |
-| Menu_ID | Menu's ID | INT UNSIGNED | 9999 | 14,294,967,295 | Y | FK | Menu ID |
+| Menu_ID | Menu's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | FK | Menu ID |
 | Quantity | Quantity ordered for this menu by the customer | INT UNSIGNED | 9 | 1-4,294,967,295 | Y | | |
 
 ## REVIEW
 
-| ATTRIBUTE NAME Review ID | CONTENTS Review's ID | TYPE INT UNSIGNED | FORMAT 9999 | RANGE 1-4,294,967,295 | REQUIRED Y | PK OR FK PK | FK REFERENCED TABLE |
+| ATTRIBUTE NAME | CONTENTS | TYPE | FORMAT | RANGE | REQUIRED | PK OR FK | FK REFERENCED TABLE |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| Review_ID | Review's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK | |
 | Order_ID | Order's ID | INT UNSIGNED | 9999 | 1-4,294,967,295 | Y | PK, FK | Order_ID |
 | Comments | Comment for this review | TEXT | Xxxxxxxxxx | | | | |
 | Restaurant_Rating | Stars given to the restaurant | INT UNSIGNED | 5 | 1-5 | Y | | |
