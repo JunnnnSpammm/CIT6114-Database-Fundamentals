@@ -19,7 +19,7 @@
 | Restaurant_Name | Restaurant's name | VARCHAR(255) | Xxxxxxxxxx | | Y | | |
 | Address | Restaurant's address | TEXT | Xxxxxxxxxx | | Y | | |
 | Description | Restaurant's description | TEXT | Xxxxxxxxxx | | | | |
-| Opening_Hours | Restaurant's opening hours | VARCHAR(100) | hh:mm hh:mm | 00:00-24:00 | Y | | |
+| Opening_Hours | Restaurant's opening hours | VARCHAR(100) | hh:mm - hh:mm | 00:00-24:00 | Y | | |
 | Avg_Rating | Restaurant's average rating | DECIMAL(3, 2) | 5.00 | 0.00-5.00 | | | |
 
 ## RIDER
