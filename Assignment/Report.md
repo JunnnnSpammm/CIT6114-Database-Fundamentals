@@ -30,7 +30,7 @@
 ### RIDER
 | ATTRIBUTE NAME  | CONTENTS                     | TYPE          | FORMAT           | RANGE           | REQUIRED | PK OR FK | FK REFERENCED TABLE |
 |-----------------|------------------------------|---------------|------------------|-----------------|----------|----------|---------------------|
-| Rider_ID        | Restaurant's ID              | SERIAL        | 9999             | 1-2,147,483,647 | Y        | PK       |                     |
+| Rider_ID        | Rider's ID                   | SERIAL        | 9999             | 1-2,147,483,647 | Y        | PK       |                     |
 | Rider_Name      | Restaurant's name            | VARCHAR(255)  | Xxxxxxxxxx       |                 | Y        |          |                     |
 | Email           | Restaurant's address         | VARCHAR(255)  | xxxxxx@xxxxx.xxx |                 | Y        |          |                     |
 | Hashed_Password | Restaurant's description     | VARCHAR(255)  | Xxxxxxxxxx       |                 | Y        |          |                     |
@@ -60,13 +60,13 @@
 | Customer_ID       | Customer's ID         | INT          | 9999       | 1-2,147,483,647 | Y        | FK       | Customer_ID         |
 | PaymentMethod     | Payment method's name | VARCHAR(100) | Xxxxxxxxxx |                 | Y        |          |                     |
 
-### ORDER
+### ORDERS
 | ATTRIBUTE NAME    | CONTENTS                              | TYPE           | FORMAT              | RANGE                             | REQUIRED | PK OR FK | FK REFERENCED TABLE |
 |-------------------|---------------------------------------|----------------|---------------------|-----------------------------------|----------|----------|---------------------|
 | Order_ID          | Order's ID                            | SERIAL         | 9999                | 1-2,147,483,647                   | Y        | PK       |                     |
 | Customer ID       | Customer's ID                         | INT            | 9999                | 1-2,147,483,647                   | Y        | FK       | Customer ID         |
 | Restaurant_ID     | Restaurant's ID                       | INT            | 9999                | 1-2,147,483,647                   | Y        | FK       | Restaurant ID       |
-| Rider_ID          | Restaurant's ID                       | INT            | 9999                | 1-2,147,483,647                   | Y        | FK       | Rider_ID            |
+| Rider_ID          | Rider's ID                            | INT            | 9999                | 1-2,147,483,647                   | Y        | FK       | Rider_ID            |
 | Payment_Method_ID | Payment method's ID                   | INT            | 9999                | 1-2,147,483,647                   | Y        | FK       | Payment_Method_ID   |
 | Timestamp         | Date and time when the order was made | DATETIME       | YYYY-MM-DD HH:MM:SS |                                   | Y        |          |                     |
 | Order Status      | Current order status                  | VARCHAR(15)    | Xxxxxxxxxx          | Preparing, in delivery, completed | Y        |          |                     |
@@ -317,7 +317,7 @@ INSERT INTO REVIEW (Order_ID, Comments, Restaurant_Rating, Rider_Rating, Review_
 ## 5. Data Manipulation with SQL:
 ### i. At least one aggregate function (count, max, min, avg, sum)
 #### Purpose
-Analyses overall business volume and typical customer spending patterns at different order stages (Order_Status). By grouping the transactions, it uses five aggregate functions (COUNT, SUM, A VG, MIN, MAX) to track active cash flow, evaluate the average cost of an order, and pinpoint the cheapest and most expensive purchases made on the platform.
+Analyses overall business volume and typical customer spending patterns at different order stages (Order_Status). By grouping the transactions, it uses five aggregate functions (COUNT, SUM, AVG, MIN, MAX) to track active cash flow, evaluate the average cost of an order, and pinpoint the cheapest and most expensive purchases made on the platform.
 
 #### SQL Code
 ```sql
@@ -342,7 +342,7 @@ GROUP BY Order_Status;
 
 ### ii. At least one query with a group by and having clauses
 #### Purpose
-Tracks high-volume menu items and exceptional item-level sales performance across different merchants. By grouping via individual restaurants and their dishes, it uses the SUM aggregate to calculate total units sold, applying a minimum order quantity (HA VING > 2) to isolate most wanted food from slow-moving dishes and pinpoint the most influential menu drivers on the platform.
+Tracks high-volume menu items and exceptional item-level sales performance across different merchants. By grouping via individual restaurants and their dishes, it uses the SUM aggregate to calculate total units sold, applying a minimum order quantity (HAVING > 2) to isolate most wanted food from slow-moving dishes and pinpoint the most influential menu drivers on the platform.
 
 #### SQL Code
 ```sql
@@ -481,7 +481,7 @@ WHERE
 
 ### iv. Stored Procedure
 #### Purpose
-Recalculates the riders average rating on their completed order reviews and updates their profile in the rider table in case of an error by inputting the riders ID.
+A insert function that allow us to place an order for a single item. As well as checking if the order's item came from the correct resturarant.
 
 #### SQL Code
 ```sql
@@ -576,28 +576,28 @@ Create a view v_active_delivery_monitor to only retrieve all the information rel
 
 #### SQL Code
 ```sql
-SELECT
 CREATE OR REPLACE VIEW v_active_delivery_monitor AS
-  o.Order_ID,
-  o.Timestamp AS Order_Placed_Time,
-  o.Order_Status,
-  r.Restaurant_Name,
-  r.Address AS Restaurant_Pickup_Address,
-  rd.Rider_Name,
-  rd.Vehicle_Type,
-  rd.Vehicle_Plate,
-  c.Customer_Name,
-  c.Address AS Customer_Delivery_Address
-FROM
-  ORDERS o
-JOIN
-  RESTAURANT r ON o.Restaurant_ID = r.Restaurant_ID
-JOIN
-  RIDER rd ON o.Rider_ID = rd.Rider_ID
-JOIN
-  CUSTOMER c ON o.Customer_ID = c.Customer_ID
-WHERE
-  o.Order_Status IN ('preparing', 'in delivery');
+    SELECT
+      o.Order_ID,
+      o.Timestamp AS Order_Placed_Time,
+      o.Order_Status,
+      r.Restaurant_Name,
+      r.Address AS Restaurant_Pickup_Address,
+      rd.Rider_Name,
+      rd.Vehicle_Type,
+      rd.Vehicle_Plate,
+      c.Customer_Name,
+      c.Address AS Customer_Delivery_Address
+    FROM
+      ORDERS o
+    JOIN
+      RESTAURANT r ON o.Restaurant_ID = r.Restaurant_ID
+    JOIN
+      RIDER rd ON o.Rider_ID = rd.Rider_ID
+    JOIN
+      CUSTOMER c ON o.Customer_ID = c.Customer_ID
+    WHERE
+      o.Order_Status IN ('preparing', 'in delivery');
 ```
 
 #### Output
